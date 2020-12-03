@@ -1,24 +1,8 @@
-# README
+# Alpha Blog
+### A blog website created to learn the fundamentals of Ruby on Rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Working with routes: Added routes - /home (root) /about (get)
 
-Things you may want to cover:
+* Added controller for the static pages
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Added views for controller to serve the files
