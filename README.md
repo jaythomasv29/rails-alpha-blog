@@ -12,6 +12,11 @@
 * `rails generate new <project name>`
 * `rails generate controller <controller_name>`
 * `rails generate migration <create_articles>`
+* `rails db:migrate`
+* `rails console`
+* `Article.all` (displays the table that does a sql query (SELECT * FROM "articles")
+* `Article.create()` (creates an article by using an INSERT sql statement based on the class attributes to that creates a new object)
+* `article.save` (saves the created data)
 
 ### Rails naming conventions
 #### Articles resource
