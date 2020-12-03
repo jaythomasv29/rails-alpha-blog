@@ -7,6 +7,8 @@
 
 * Added views for controller to serve the files
 
+* Working with models to create a db to perform CRUD operations
+
 
 ### Rails commands
 * `rails generate new <project name>`
