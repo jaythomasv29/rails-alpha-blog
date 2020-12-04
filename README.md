@@ -12,6 +12,8 @@
 * Working with model class to validate data using `validates`
 * Added more routes to list all & list one that directs to a method in controller to access data and to display it in views
 
+* Created the 'create' and 'new' method in articles controller along with views to successfully display it on webpage
+
 
 ### Rails commands
 * `rails generate new <project name>`
