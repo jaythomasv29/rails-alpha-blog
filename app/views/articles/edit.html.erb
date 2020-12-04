@@ -1,13 +1,14 @@
-<h1>Add a new article</h1>
+<h1>Edit</h1>
+
 <% if @article.errors.any? %>
   <h2>The following errors prevented the article from being created</h2>
   <% for msg in @article.errors.full_messages %>
-    <p> <%= msg %> </p>
+    <p><%= msg %> </p>
   <% end %>
 <% end %>
 
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
-  <p>
+<%= form_with(model: @article, local: true) do |f| %>
+ <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>
   </p>
@@ -16,5 +17,4 @@
     <%= f.text_area :description %>
   </p>
   <%= f.submit %>
-<% end %>
-
+<% end  %>
