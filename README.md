@@ -40,3 +40,9 @@
 * Article model file name: article.rb
 * Article model class name: Article
 * Table name: articles
+
+
+
+Heroku Development
+* Get started by creating an account
+* 
