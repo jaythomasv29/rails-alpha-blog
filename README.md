@@ -25,6 +25,7 @@
 #### Calling the Article model class
 * `Article.all` (displays the table that does a sql query (SELECT * FROM "articles")
 * `Article.create()` (creates an article by using an INSERT sql statement based on the class attributes to that creates a new object)
+* You can use `article = Article.new(title:"porsche", description:"911 turbo s", price:"99999.99")` to create a new Article object to later save
 * `Article.find(id)`
 #### Calling the initialized variable
 * `article.destroy` (executes a sql query that performs: DELETE FROM "articles" WHERE "articles"."id" = ?)

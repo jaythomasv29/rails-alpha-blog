@@ -1,4 +1,4 @@
-<h1>Add a new article</h1>
+<h1>Add a new post</h1>
 <% if @article.errors.any? %>
   <h2>The following errors prevented the article from being created</h2>
   <% for msg in @article.errors.full_messages %>
@@ -7,6 +7,10 @@
 <% end %>
 
 <%= form_with scope: :article, url: articles_path, local: true do |f| %>
+ <p>
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </p>
   <p>
     <%= f.label :title %><br>
     <%= f.text_field :title %>

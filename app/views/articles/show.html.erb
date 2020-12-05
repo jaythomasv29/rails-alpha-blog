@@ -1,3 +1,6 @@
-<h1>Review</h1>
+<h1>Post</h1>
+<p><strong>Price: <%= @article.price %> </strong></p>
 <p><strong>Title: <%= @article.title %> </strong></p>
 <p><strong>Description: <%= @article.description %> </strong></p>
+
+<%= link_to "Back to All", articles_path, method: :get %> | <%= link_to "Edit", edit_article_path(@article), method: :get%> | <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
