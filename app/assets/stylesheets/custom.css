@@ -1,0 +1,29 @@
+/* @import 'bootstrap/dist/css/bootstrap' */
+
+.navbar {
+  background-color: black !important;
+}
+
+.nav-link, .navbar-brand {
+  color: white !important;
+}
+
+div .jumbotron {
+  background-image: url('jumbotron.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30rem;
+  text-shadow: 2px 2px #6f6d6d;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: rgb(136, 136, 136);
+   color: white;
+   text-align: center;
+}
+
