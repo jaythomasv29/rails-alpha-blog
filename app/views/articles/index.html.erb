@@ -1,22 +1,31 @@
-<h1>Posts</h1>
-<%= link_to "Create new post", new_article_path, method: :get%>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">($) Price</th>
-      <th scope="col">Title</th>
-      <th scope="col">Description</th>
-      <th scope="col">Action</th>
-    </tr>
-  </thead>
-  <tbody>
+
+<div id="page-content">
+
+
+<div class="text-center">
+<h1 class="text-center">Posts</h1>
+<%= link_to "Create new post", new_article_path, method: :get, class: "btn btn-success mb-2"%>
+</div>
     <%  @articles.each do |article| %>
-    <tr>
-      <td><%= article.price %> </td>
-      <td> <%= article.title%> </td>
-      <td> <%= article.description%> </td>
-      <td> <%= link_to "View", article, class: "btn btn-primary" %> <%= link_to "Edit", edit_article_path(article), method: :get, class: "btn btn-secondary"%> <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
-    </tr>
+    <div class="row justify-content-md-center mb-2">
+      <div class="col-8 mt-4">
+        <div class="card text-center shadow mb-5 bg-white rounded">
+          <div class="card-header font-italic">
+          by James Vongampai
+          </div>
+          <div class="card-body">
+            <h5 class="card-title"><%= link_to article.title, article_path(article), class: "text-success" %></h5>
+          <p class="card-text"><strong>$<%= article.price%></strong></p>
+            <p class="card-text"><%= truncate(article.description, length: 20) %></p>
+          <%= link_to "View", article, class: "btn btn-outline-primary " %> <%= link_to "Edit", edit_article_path(article), method: :get, class: "btn btn-outline-info"%> <%= link_to "Delete", article_path(article), method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-outline-danger" %>
+          </div>
+          <div class="card-footer text-muted">
+          <small>Created <%= time_ago_in_words(article.created_at) %> ago, 
+          edited <%= time_ago_in_words(article.updated_at) %> ago</small>
+          </div>
+        </div>
+    </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+ </div>
+    

@@ -1,5 +1,15 @@
 /* @import 'bootstrap/dist/css/bootstrap' */
 
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+  padding: 0;
+}
+
+#page-content {
+  background-color: lightgrey;
+  /* flex: 1 0 auto; */
+}
 .navbar {
   background-color: black !important;
 }
@@ -18,6 +28,9 @@ div .jumbotron {
 }
 
 .footer {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
    position: fixed;
    left: 0;
    bottom: 0;
@@ -27,3 +40,16 @@ div .jumbotron {
    text-align: center;
 }
 
+div.col-8 {
+  width: 20em;  
+}
+
+form {
+  margin: 0 auto;
+  width: 20em;
+}
+
+.alert {
+  padding: 0;
+  margin-bottom: 0;
+}
