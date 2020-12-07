@@ -1,0 +1,14 @@
+<% if obj.errors.any? %>
+    <div class="alert alert-warning" role="alert">
+       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+    <h5>The following errors prevented changes</h5>
+    <ul>
+    <% for msg in obj.errors.full_messages %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+ 
+    </div>
+    <%end%>
