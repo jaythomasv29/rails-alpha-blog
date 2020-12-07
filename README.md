@@ -41,7 +41,12 @@
 * Article model class name: Article
 * Table name: articles
 
-
+### Active Record Associations
+* one_to_many relationship - A user (singular) can have many posts(plural)
+* Database changes to create a new migration to add a column in articles table that is linked to user_id
+* Created another data table to log users id, username, email
+* The `articles` table has a key that is linked using user_id and is associated to the users table
+* In our `rails console` we can verify this by testing
 
 Heroku Development
 * Get started by creating an account

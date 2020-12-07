@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     # params[:article]["title"]
     # @article = Article.new("title": params[:article]["title"], "description": params[:article]["description"])
     @article = Article.new(article_params) # require the key of article and permit :title and :description
+    @article.user = User.first
     if @article.save # if the article was successfully saved
       flash[:notice] = "Post was successfully created." # flash helper method
       redirect_to @article
