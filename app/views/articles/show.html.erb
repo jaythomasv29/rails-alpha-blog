@@ -4,6 +4,9 @@
     <div class="row justify-content-md-center text-center">
       <div class="col-10">
         <div class="card" >
+        <div class="card-header font-italic">
+          by <%= @article.user.username%>
+        </div>
           <div class="card-body">
             <h5 class="card-title"><%= @article.title%></h5>
             <h6 class="card-subtitle mb-2 text-muted"><%= @article.price %> </h6>
@@ -14,5 +17,4 @@
       </div>
     </div>
   </div>
-
 </div>

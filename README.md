@@ -48,6 +48,14 @@
 * The `articles` table has a key that is linked using user_id and is associated to the users table
 * In our `rails console` we can verify this by testing
 
+### Using Bcrypt to hash/salt user passwords
+* `BCrypt::Password.create("password")`
+* `user.authenticate("password") ` - password check method using BCrpyt
+* A hash will never be the same even if the password is the same due to salting.
+* Passwords can be converted to a hash. The hash can also be decrypted to validate passwords
+* When a user tries to login with password. We will use `user.authenticate("entered password")`
+* .authenticate() returns the user object if valid, or false if invalid.
+
+
 Heroku Development
 * Get started by creating an account
-* 
