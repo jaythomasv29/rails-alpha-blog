@@ -1,6 +1,9 @@
+<div class="row justify-content-center mt-2">
 <h1>Sign Up</h1>
-<%= render 'shared/errors', obj: @user %>
- <%= form_with(model: @user) do |f| %>
+  <div class="col-5 p-3  border border-light rounded alert-dismissable fade show" id="page-content">
+  
+<%= render '/shared/errors', obj: @user %>
+ <%= form_with(model: @user, local: true) do |f| %>
           <div class="form-group ">
             <%= f.label :username, class: "col-form-label" %>
             
@@ -27,3 +30,5 @@
         </div>
       <%= link_to 'Return to main page', articles_path%>
       <% end  %>
+</div>
+</div>

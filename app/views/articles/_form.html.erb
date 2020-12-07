@@ -6,7 +6,7 @@
   <%= render '/shared/errors', obj: @article %>
   
   <%= form_with(model: @article, local: true) do |f| %>
-  <%='by ' + @article.user.username if @article.user %>
+  
         <div class="form-group ">
             <%= f.label :price, class: "col-form-label" %>
             
