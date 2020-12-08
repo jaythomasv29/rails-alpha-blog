@@ -1,0 +1,37 @@
+
+<div id="page-content">
+
+<div class="text-center">
+<h1>All Classfied Heros</h1>
+ <div class="flickr_pagination">
+<%= will_paginate @users, :container => false %>
+ </div>
+<% @users.each do |user| %>
+  <div class="row justify-content-md-center">
+    <div class="col-8 mt-4">
+      <div class="card text-center shadow mb-5 bg-white rounded">
+        <div class="card-header font-italic">
+          <%= link_to user.username, user_path(user) %>
+        </div>
+        <div class="card-body">
+          <div class="card-title"><%= link_to gravatar_for(user, size: 150), user %> <!-- links to user show page -->
+            <p class="card-text"><%= pluralize(user.articles.count, "article") %></p>
+            <%= link_to "View profile", user, class: "btn btn-outline-success" %>
+            <%= link_to "Edit profile", edit_user_path(user), class: "btn btn-outline-primary" %>
+          </div>
+        </div>
+        <div class="card-footer text-muted">
+        <small>Joined <%= time_ago_in_words(user.created_at) %> ago</small>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
+ <div class="flickr_pagination bottom">
+<%= will_paginate @articles, :container => false %>
+ </div>
+
+</div>
+
+ </div>
+    

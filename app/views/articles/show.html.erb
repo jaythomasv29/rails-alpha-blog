@@ -4,8 +4,9 @@
     <div class="row justify-content-md-center text-center">
       <div class="col-10">
         <div class="card" >
-        <div class="card-header font-italic">
+        <div class="card-header font-italic mb-2">
           by <%= @article.user.username%>
+          <%= link_to gravatar_for(@article.user), user_path(@article.user)%>
         </div>
           <div class="card-body">
             <h5 class="card-title"><%= @article.title%></h5>

@@ -6,6 +6,15 @@
   <h1 class="text-center">Posts</h1>
   <%= link_to "Create new post", new_article_path, method: :get, class: "btn btn-success mb-2" %>
 </div>
+
+ <div class="flickr_pagination">
+<%= will_paginate @articles, :container => false %>
+ </div>
+
   <%= render "article", obj: @articles %>
+
+   <div class="flickr_pagination bottom">
+<%= will_paginate @articles, :container => false %>
+ </div>
  </div>
     

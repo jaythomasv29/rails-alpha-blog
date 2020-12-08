@@ -2,7 +2,11 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update]
   def show
     # uses before_action to get param
-    @articles = @user.articles
+    @articles = @user.articles.paginate(page: params[:page], per_page: 3)
+  end
+
+  def index
+    @users = User.paginate(page: params[:page], per_page: 3)
   end
 
   def new
@@ -13,7 +17,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Sign up successful"
-      redirect_to articles_path
+      redirect_to @user
     else
       render "new"
     end
@@ -27,7 +31,7 @@ class UsersController < ApplicationController
     # uses before_action to get param
     if @user.update(user_params)
       flash[:notice] = "User account updated successfully"
-      redirect_to articles_path
+      redirect_to @user
     else
       render "edit"
     end
