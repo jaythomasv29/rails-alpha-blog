@@ -1,4 +1,10 @@
 class UsersController < ApplicationController
+  before_action :set_user, only: [:show, :edit, :update]
+  def show
+    # uses before_action to get param
+    @articles = @user.articles
+  end
+
   def new
     @user = User.new
   end
@@ -14,11 +20,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
+    # uses before_action to get param
   end
 
   def update
-    @user = User.find(params[:id])
+    # uses before_action to get param
     if @user.update(user_params)
       flash[:notice] = "User account updated successfully"
       redirect_to articles_path
