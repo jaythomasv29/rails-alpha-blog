@@ -56,6 +56,12 @@
 * When a user tries to login with password. We will use `user.authenticate("entered password")`
 * .authenticate() returns the user object if valid, or false if invalid.
 
+### Pagination
+* Utilized pagination to decrease load time using gem `will_paginate`
+
+### User authentication / registration
+
+### Login using sessions
 
 Heroku Development
 * Get started by creating an account
