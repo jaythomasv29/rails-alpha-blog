@@ -70,5 +70,3 @@ Heroku Development
 * `heroku run rails db:migrate` (run migrations on production side)
 * `git push heroku <master>` (pushes staged files to production for deployment)
 * `heroku open`
-
-
