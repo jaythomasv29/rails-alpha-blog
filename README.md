@@ -65,3 +65,10 @@
 
 Heroku Development
 * Get started by creating an account
+* `git add .`
+* `git commit -m ""`
+* `heroku run rails db:migrate` (run migrations on production side)
+* `git push heroku <master>` (pushes staged files to production for deployment)
+* `heroku open`
+
+
