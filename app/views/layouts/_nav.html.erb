@@ -23,14 +23,24 @@
       </li>
     </ul>
     <div class="collapse navbar-collapse mr-4" id="navbarText">
+    
       <ul class="navbar-nav ml-auto">
-          <% if logged_in? %>
-          <li><%= link_to "#{current_user.username}", user_path(current_user), class: "mr-3 text-white" %></li>
-          <li><%= link_to "Logout", logout_path, method: :delete %></li>
-          <% else %>
-          <li><a href="/signup" class="mr-3">Sign Up</a></li>
-          <li><a href="/login" class="mr-3">Login</a></li>
-          <% end %>
+        <div class="btn-group">
+          <button type="button" class="btn btn-outline-info disabled">  <%= logged_in? ? current_user.username : "Welcome" %></button>
+          <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split mr-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="sr-only">Toggle Dropdown</span>
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">  
+    <% if logged_in? %>
+      <%= link_to "My Profile", user_path(current_user), method: :get, class: "text-white dropdown-item" %>
+      <%= link_to "Delete Profile", user_path(current_user), method: :delete, class: "text-danger dropdown-item",data: {confirm: "Are you sure you want to permanently delete?"} %>
+      <%= link_to "Logout", logout_path, method: :delete, class: "dropdown-item text-white" %>
+      <% else %>
+      <%= link_to "Sign Up", signup_path, class:"dropdown-item text-white" %>
+      <%= link_to "Login", login_path, class:"dropdown-item text-white" %>
+      <% end %>
+  </div>
+</div>
       </ul>
     </div><!--/.nav-collapse -->
 

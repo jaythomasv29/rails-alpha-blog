@@ -4,6 +4,9 @@ body {
   min-height: 100vh;
   min-width: 100vw;
   padding: 0;
+  overflow-x: hidden;
+    overflow-y: scroll;
+
 }
 
 #page-content {
@@ -89,4 +92,13 @@ form {
 
   .bottom {
     padding-bottom: 1em;
+  }
+
+  .dropdown-menu {
+    background-color: black !important;
+  }
+
+  .dropdown-menu a :hover {
+    background-color: #17a2b8 !important;
+    
   }

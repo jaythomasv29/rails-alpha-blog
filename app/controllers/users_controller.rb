@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_user, only: [:show, :update, :edit]
+  before_action :require_same_user, only: [:edit, :update, :destroy]
   def show
     # uses before_action to get param
     @articles = @user.articles.paginate(page: params[:page], per_page: 3)
@@ -37,13 +39,29 @@ class UsersController < ApplicationController
       render "edit"
     end
   end
+  
+  def destroy
+    @user.destroy # destroys the user
+    session[:user_id] = nil # unset the session from the user id
+    flash[:alert] = "Account deleted"
+    redirect_to root_path
+  end
 
   private
+
+  
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params # private method to white list params
     params.require(:user).permit(:username, :email, :password)
+  end
+
+  def require_same_user
+    if current_user != @user
+      flash[:alert] = "You do not have rights to modify other accounts"
+      redirect_to @user
+    end
   end
 end

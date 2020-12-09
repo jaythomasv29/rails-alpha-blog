@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   before_save { self.email = email.downcase }
-  has_many :articles
+  has_many :articles, dependent: :destroy # dependent on if destroyed to remove association
   # add validations
   # username must be present and unique, min 3 max 25
   # email address must be present and unique, max 105
