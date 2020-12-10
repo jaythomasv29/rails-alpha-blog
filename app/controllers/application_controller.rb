@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_same_user # require user to be the same when editing their own
-    if current_user != @article.user
+    if current_user != @article.user && !curent_user.admin # if current user is not admin, AND it is not the current user who owns the article
       flash[:alert] = "You do not have rights to modify other posts"
       redirect_to @article
     end

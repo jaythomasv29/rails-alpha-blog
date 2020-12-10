@@ -9,9 +9,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
-      <%# <li class="nav-item">
-        <a class="nav-link" href="/signup">Register</a>
-      </li> %>
+     
       <li class="nav-item">
         <a class="nav-link" href="/articles">Posts</a>
       </li>
@@ -25,6 +23,10 @@
     <div class="collapse navbar-collapse mr-4" id="navbarText">
     
       <ul class="navbar-nav ml-auto">
+         <% if logged_in? && current_user.admin? %>
+            <button type="button" class="btn btn-outline-secondary disabled">Admin</button>
+         <%end%>
+      
         <div class="btn-group">
           <button type="button" class="btn btn-outline-info disabled">  <%= logged_in? ? current_user.username : "Welcome" %></button>
           <button type="button" class="btn btn-outline-info dropdown-toggle dropdown-toggle-split mr-5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

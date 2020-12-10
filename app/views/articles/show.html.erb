@@ -13,7 +13,7 @@
             <h6 class="card-subtitle mb-2 text-muted"><%= @article.price %> </h6>
             <p class="card-text"><%= @article.description %> </p>
           <%= link_to "Back to All", articles_path, method: :get %>
-          <% if logged_in? && @article.user == current_user %>
+          <% if logged_in? && (@article.user == current_user  || current_user.admin?)%>
           <%= link_to "Edit", edit_article_path(@article), method: :get%>
           <%= link_to "Delete", article_path(@article), method: :delete, data: { confirm: "Are you sure?" } %>
           <% end %>
