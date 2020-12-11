@@ -65,9 +65,11 @@
 ### Login using sessions
 
 
-### Minitest with rails 
-  * Using the TDD approach 
+### Minitest with rails unit testing & functional testing
+  * Using the TDD approach  to do unit testing
   * Learning about db field validation using unit tests
+  * Using `test` keyword and `assertion` testing (e.g. keyword `assert` & `assert_not`)
+  * Add validations to model with the aid of unit testing with built-in rails minitest
 
 Heroku Development
 * Get started by creating an account
