@@ -63,6 +63,11 @@
 
 ### Login using sessions
 
+
+### Minitest with rails 
+  * Using the TDD approach 
+  * Learning about db field validation using unit tests
+
 Heroku Development
 * Get started by creating an account
 * `git add .`
