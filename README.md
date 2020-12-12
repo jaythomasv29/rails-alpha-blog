@@ -70,6 +70,8 @@
   * Learning about db field validation using unit tests
   * Using `test` keyword and `assertion` testing (e.g. keyword `assert` & `assert_not`)
   * Add validations to model with the aid of unit testing with built-in rails minitest
+  * Functional testing with controller
+  * `rails generate test_unit: scaffold category` - creates controller test
 
 Heroku Development
 * Get started by creating an account
